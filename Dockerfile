@@ -21,3 +21,5 @@ USER demo
 
 FROM backend AS installation
 RUN composer create-project --prefer-dist laravel/laravel tmp "10.*"
+
+RUN sh -c "mv -n tmp/.* ./ && mv tmp/* ./ && rm -Rf tmp"
